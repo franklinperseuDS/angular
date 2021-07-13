@@ -24,5 +24,13 @@ export class TarefaService {
       return tarefas.find(tarefa => tarefa.id === id);
     }
 
-
+    atualizar(tarefa: Tarefa): void{
+      const tarefas: Tarefa[] = this.listarTodos();
+      tarefas.forEach((obj,index,objs)=>{
+        if (tarefa.id === obj.id){
+          objs[index] = tarefa;
+        }
+      });
+      localStorage['tarefas'] = JSON.stringify(tarefas);
+    }
 }
