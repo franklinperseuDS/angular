@@ -21,8 +21,8 @@ export class TarefaService {
 
     buscarPorId(id: number): Tarefa {
       const tarefas: Tarefa[] = this.listarTodos();
-      return tarefas.find(tarefa => this.tarefa.id === id);
+      return tarefas.find(tarefa => tarefa.id === id);
     }
 
-    
+
 }
