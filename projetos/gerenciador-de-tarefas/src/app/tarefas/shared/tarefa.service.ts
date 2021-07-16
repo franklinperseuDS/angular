@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Tarefa } './';
+import { Tarefa } from './tarefa.module';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -32,5 +33,22 @@ export class TarefaService {
         }
       });
       localStorage['tarefas'] = JSON.stringify(tarefas);
+    }
+
+    remover(id: number): void{
+      let tarefas: Tarefa[] = this.listarTodos();
+      tarefas = tarefas.filter(tarefa => tarefa.id !== id);
+      localStorage['tarefas'] = JSON.stringify(tarefas);
+    }
+
+    alterarStatus(id: number): void{
+      const tarefas : Tarefa[] = this.listarTodos(); 
+      tarefas.forEach((obj, index, objs) => {
+          if ( id == obj.id){
+            objs[index].concluida = !obj.concluida;
+          }
+        }
+      );
+        localStorage['tarefas'] = JSON.stringify(tarefas);
     }
 }
