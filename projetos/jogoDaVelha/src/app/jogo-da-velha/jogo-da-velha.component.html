@@ -13,12 +13,13 @@
         <h2>Jogo da Velha</h2>
 
         <!-- Tela inicial -->
-        <div class="principal">
+        <div class="principal" *ngIf="showInicio">
             <a href="#" class="botao"> Iniciar</a>
         </div>
+
         <!-- Fim da tela inicial -->
         <!-- tabuleiro -->
-        <div>
+        <div *ngIf="showTabuleiro">
             <ul>
                 <li class="kz-border-bottom kz-border-right"></li>
                 <li class="kz-border-bottom kz-border-right"></li>
@@ -32,10 +33,10 @@
             <!-- fim tabuleiro -->
         </div>
         <!-- tela final -->
-        <div>
+        <div *ngIf="showFinal">
             <span>
                 <p> Você venceu</p>
-                <p> Você Perder</p>
+                <p> Você Perdeu</p>
                 <p>O jogo terminou empatado...</p>
                 <br />
                 <a href='#'
@@ -43,8 +44,8 @@
             </span>
         </div>
         <!-- tela final -->
-    </div>
 
+    </div>
 </body>
 
 </html>
