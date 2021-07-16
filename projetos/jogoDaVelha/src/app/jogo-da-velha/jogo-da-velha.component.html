@@ -14,16 +14,16 @@
 
         <!-- Tela inicial -->
         <div class="principal" *ngIf="showInicio">
-            <a href="#" class="botao"> Iniciar</a>
+            <a href="#" class="botao" (click)="iniciarJogo()"> Iniciar</a>
         </div>
 
         <!-- Fim da tela inicial -->
         <!-- tabuleiro -->
         <div *ngIf="showTabuleiro">
             <ul>
-                <li class="kz-border-bottom kz-border-right"></li>
-                <li class="kz-border-bottom kz-border-right"></li>
-                <li class="kz-border-bottom "></li>
+                <li class="kz-border-bottom kz-border-right" (click)="jogar(0,0)" [class.kz-img-x]="exibirX(0,0)" [class.kz-img-0]="exibirO(0,0)" [class.kz-cor-vitoria]="exibirVitoria(0,0)"></li>
+                <li class="kz-border-bottom kz-border-right" (click)="jogar(0,1)" [class.kz-img-x]="exibirX(0,1)" [class.kz-img-0]="exibirO(0,1)" [class.kz-cor-vitoria]="exibirVitoria(0,1)"></li>
+                <li class="kz-border-bottom" (click)="jogar(0,2)" [class.kz-img-x]="exibirX(0,2)" [class.kz-img-0]="exibirO(0,2)" [class.kz-cor-vitoria]="exibirVitoria(0,2)"></li>
                 <li class="kz-border-bottom kz-border-right"></li>
                 <li class="kz-border-bottom kz-border-right"></li>
                 <li class="kz-border-bottom "></li>

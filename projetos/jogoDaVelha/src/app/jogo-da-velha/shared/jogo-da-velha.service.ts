@@ -59,7 +59,7 @@ export class JogoDaVelhaService {
      * 
      */
     get showInicio(): boolean{
-      return this.showInicio;
+      return this._showInicio;
     }
 
     /**
