@@ -1,16 +1,31 @@
-import { TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { JogoDaVelhaService } from './jogo-da-velha.service';
+import { JogoDaVelhaComponent } from '../jogo-da-velha.component';
+import { JogoDaVelhaService } from '../shared';
 
-describe('JogoDaVelhaService', () => {
-  let service: JogoDaVelhaService;
+describe('JogoDaVelhaComponent', () => {
+  let component: JogoDaVelhaComponent;
+  let fixture: ComponentFixture<JogoDaVelhaComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ 
+        JogoDaVelhaComponent 
+      ],
+      providers: [
+        JogoDaVelhaService
+      ]
+    })
+    .compileComponents();
+  }));
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(JogoDaVelhaService);
+    fixture = TestBed.createComponent(JogoDaVelhaComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });
